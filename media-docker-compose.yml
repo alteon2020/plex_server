@@ -11,7 +11,7 @@ services:
       - PGID=1000
     volumes:
       - /home/alteon/qbittorrent/config:/config
-      - /media/plex/Downloads/torrents:/downloads
+      - /home/alteon/media/plex/Downloads/torrents:/downloads
     ports:
       - '8080:8080'
       - 52855:52855
@@ -37,8 +37,8 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      - /media/plex/Videos/radarr:/movies
-      - /media/plex/Videos/sonarr:/tv
+      - /home/alteon/media/plex/Videos/radarr:/movies
+      - /home/alteon/media/plex/Videos/sonarr:/tv
       - /home/alteon/bazarr/appdata/config:/config
     ports:
       - '6767:6767'
@@ -89,9 +89,9 @@ services:
       - PGID=1000
     volumes:
       - /home/alteon/radarr/appdata/config:/config
-      - /media/plex/Downloads/torrents:/downloads
-      - /media/plex/Videos/radarr/movies:/movies
-      - /media/plex/Videos/radarr/anime:/anime
+      - /home/alteon/media/plex/Downloads/torrents:/downloads
+      - /home/alteon/media/plex/Videos/radarr/movies:/movies
+      - /home/alteon/media/plex/Videos/radarr/anime:/anime
     ports:
       - '7878:7878'
 
@@ -106,8 +106,8 @@ services:
       - PGID=1000
     volumes:
       - /home/alteon/sonarr/appdata/config:/config
-      - /media/plex/Videos/sonarr:/tv
-      - /media/plex/Downloads/torrents:/downloads
+      - /home/alteon/media/plex/Videos/sonarr:/tv
+      - /home/alteon/media/plex/Downloads/torrents:/downloads
     ports:
       - '8989:8989'
 
@@ -124,8 +124,8 @@ services:
       - /home/alteon/plex/config:/config
       - /home/alteon/plex/data:/data
       - /home/alteon/plex/transcode:/transcode
-      - /media/plex/Videos:/media
-      - /media/plex/Downloads/torrents:/media
+      - /home/alteon/media/plex/Videos:/home/alteon/media
+      - /home/alteon/media/plex/Downloads/torrents:/home/alteon/media
     devices:
       - /dev/dri:/dev/dri
       - /dev/bus/usb:/dev/bus/usb
